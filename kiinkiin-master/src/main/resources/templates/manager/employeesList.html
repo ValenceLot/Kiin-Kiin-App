@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Employees List</title>
+</head>
+<style>
+    body {
+        background-color: #ffe0b2;
+    }
+    #btn-primary{
+        background-color: peru;
+        border-color: peru;
+    }
+    table{
+        margin-top: 5px;
+        width:70%;
+    }
+    th{
+        text-align: center;
+    }
+    td{
+        text-align: center;
+    }
+    tr{
+        background-color: #b29559;
+    }
+    tr:nth-child(ood){
+        background-color: #b29559;
+    }
+
+    tr:nth-child(even){
+        background-color: #ffcc80;
+    }
+
+
+</style>
+
+
+<body>
+
+
+<nav>
+    <div class="nav-wrapper" style="background-color: #ffcc80">
+        <img class="logo" src="/logo.png" width="80" height="60"/>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/" class="waves-effect waves-light btn" style="background-color: #b29559">Logout</a></li>
+            <li><a href="/manager/schedule" class="waves-effect waves-light btn"
+                   style="background-color: #b29559">Back</a></li>
+
+        </ul>
+
+    </div>
+</nav>
+
+<div class="container">
+<table class="table table-striped table-dark" align="center">
+    <thead>
+    <th>Name</th>
+    <th></th>
+    </thead>
+
+    <tbody>
+    <tr th:each="employee :${employees}">
+        <td th:text="${employee.name}"></td>
+        <td><a th:href="@{'employeeDetails?id='+ ${employee.employeeId}}" class="btn btn-primary" href="#" role="button" id="btn-primary">Details</a></td>
+    </tr>
+    </tbody>
+
+</table>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:form="http://www.w3.org/1999/xhtml">
+<head>
+
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <title>Title</title>
+
+</head>
+<style>
+    body {
+        background-color: #ffe0b2;
+    }
+
+    .flex-container {
+        display: flex;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .flex-container > div {
+        margin: 10px;
+        padding: 20px;
+    }
+</style>
+
+
+<body>
+<nav>
+    <div class="nav-wrapper" style="background-color: #ffcc80">
+        <img class="logo" src="/logo.png" width="80" height="60"/>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/" class="waves-effect waves-light btn" style="background-color: #b29559">Logout</a></li>
+            <li><a href="/manager/schedule" class="waves-effect waves-light btn"
+                   style="background-color: #b29559">Back</a></li>
+
+        </ul>
+
+    </div>
+</nav>
+
+
+<div class="container">
+    <table class="schedule">
+        <thead>
+
+
+        </thead>
+        <tbody>
+
+        <tr>
+            <td style="background-color: #fff3e0 ">
+                <form action="/manager/updateSchedule" method="post">
+
+                    <input type="hidden" th:field="${employee.employeeId}"/>
+
+                    Position: <label><span th:field="${employee.position}"></span></label>
+                    <p></p>
+                    Name:<label> <input type="text" th:field="${employee.name}"/> </label>
+
+
+                    <p> 15:00-20:00</p>
+                    <button type="submit" value="Update">Update</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <title>Title</title>
+</head>
+<style>
+    body{
+        background-color: #ffe0b2 ;
+    }
+
+    .flex-container {
+        display: flex;
+        width: 80%;
+        margin: 0 auto;
+    }
+    .flex-container > div{
+        margin: 10px;
+        padding: 20px;
+    }
+</style>
+
+<script>
+    function checkOut1(){
+        document.getElementById("1").innerHTML = " 15:00 - 20:00";
+    }
+
+    function checkOut2(){
+        document.getElementById("2").innerHTML = " 15:00 - 20:00";
+    }
+    function checkOut3(){
+        document.getElementById("3").innerHTML = " 15:00 - 20:00";
+    }
+    function checkOut4(){
+        document.getElementById("4").innerHTML = " 15:00 - 20:00";
+    }
+    function checkOut5(){
+        document.getElementById("5").innerHTML = " 15:00 - 20:00";
+    }
+    function checkOut6(){
+        document.getElementById("6").innerHTML = " 15:00 - 20:00";
+    }
+    function checkOut7(){
+        document.getElementById("7").innerHTML = " 15:00 - 20:00";
+    }
+
+</script>
+<body>
+<nav>
+    <div class="nav-wrapper" style="background-color: #ffcc80" >
+        <img class="logo" src="/logo.png" width="80" height="60"/>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a class="Back" href="/">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="flex-container">
+    <div class="container">
+
+        <table class="schedule">
+            <thead>
+            <tr>
+                <th style="background-color: #ffcc80 " >Monday</th>
+            </tr>
+
+            </thead>
+            <tbody>
+
+            <tr th:each="employee :${employees}">
+                <td  th:if="${employee.monday == 1}" style="background-color: #fff3e0 " >
+                    Position: <label><span th:text="${employee.position}"></span></label>
+                    <p></p>
+                    Name:<label> <span th:text="${employee.name}"> </span> </label>
+                    <p id="1"> 15:00 - ?</p>
+                    <button onclick = "checkOut1()" >Check out</button>
+                </td>
+            </tr>
+            </tbody>
+
+        </table>
+    </div>
+    <div class="container">
+        <table class="schedule">
+            <thead>
+            <tr>
+                <th style="background-color: #ffcc80 ">Tuesday</th>
+            </tr>
+
+            </thead>
+            <tbody>
+            <tr th:each="employee:${employees}">
+                <td th:if="${employee.tuesday == 1}" style="background-color: #fff3e0 ">
+                    Position: <label><span th:text="${employee.position}"></span></label>
+                    <p></p>
+                    Name:<label> <span th:text="${employee.name}"> </span> </label>
+                    <p id="2"> 15:00 - ?</p>
+                    <button onclick = "checkOut2()">Check out</button>
+                </td>
+            </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+
+    <div class="container">
+        <table class="schedule">
+            <thead>
+            <tr>
+                <th style="background-color:#ffcc80 ">Wednesday</th>
+            </tr>
+
+            </thead>
+            <tbody>
+
+            <tr th:each="employee:${employees}" >
+                <td th:if="${employee.wednesday == 1}" style="background-color: #fff3e0 ">
+                    Position: <label><span th:text="${employee.position}"></span></label>
+                    <p></p>
+                    Name:<label> <span th:text="${employee.name}"> </span> </label>
+                    <p id="3"> 15:00 - ?</p>
+                    <button onclick = "checkOut3()">Check out</button>
+                </td>
+            </tr>
+            </tbody>
+
+        </table>
+    </div>
+    <div class="container">
+        <table class="schedule">
+            <thead>
+            <tr>
+                <th style="background-color:#ffcc80 ">Thursday</th>
+            </tr>
+
+            </thead>
+            <tbody>
+
+            <tr th:each="employee:${employees}">
+                <td  th:if="${employee.thursday == 1}" style="background-color: #fff3e0 ">
+                    Position: <label><span th:text="${employee.position}"></span></label>
+                    <p></p>
+                    Name:<label> <span th:text="${employee.name}"> </span> </label>
+                    <p id="4"> 15:00 - ?</p>
+                    <button onclick = "checkOut4()">Check out</button>
+                </td>
+            </tr>
+            </tbody>
+
+        </table>
+    </div>
+    <div class="container">
+        <table class="schedule">
+            <thead>
+            <tr>
+                <th style="background-color: #ffcc80 ">Friday</th>
+            </tr>
+
+            </thead>
+            <tbody>
+
+            <tr th:each="employee:${employees}" >
+                <td th:if="${employee.friday == 1}" style="background-color: #fff3e0 ">
+                    Position: <label><span th:text="${employee.position}"></span></label>
+                    <p></p>
+                    Name:<label> <span th:text="${employee.name}"> </span> </label>
+                    <p id="5"> 15:00 - ?</p>
+                    <button onclick = "checkOut5()">Check out</button>
+                </td>
+            </tr>
+            </tbody>
+
+        </table>
+    </div>
+    <div class="container">
+        <table class="schedule">
+            <thead>
+            <tr>
+                <th style="background-color: #ffcc80 ">Saturday</th>
+            </tr>
+
+            </thead>
+            <tbody>
+
+            <tr th:each="employee:${employees}" >
+                <td th:if="${employee.saturday == 1}" style="background-color: #fff3e0 ">
+                    Position: <label><span th:text="${employee.position}"></span></label>
+                    <p></p>
+                    Name:<label> <span th:text="${employee.name}"> </span> </label>
+                    <p id="6"> 15:00 - ?</p>
+                    <button onclick = "checkOut6()">Check out</button>
+                </td>
+            </tr>
+            </tbody>
+
+        </table>
+    </div>
+    <div class="container">
+        <table class="schedule">
+            <thead>
+            <tr>
+                <th style="background-color:#ffcc80 ">Sunday</th>
+            </tr>
+
+            </thead>
+            <tbody>
+
+            <tr th:each="employee:${employees}">
+                <td  th:if="${employee.sunday == 1}" style="background-color: #fff3e0 ">
+                    Position: <label><span th:text="${employee.position}"></span></label>
+                    <p></p>
+                    Name:<label> <span th:text="${employee.name}"> </span> </label>
+                    <p id="7"> 15:00 - ?</p>
+                    <button onclick = "checkOut7()">Check out</button>
+                </td>
+            </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>
+</body>
+</html>
